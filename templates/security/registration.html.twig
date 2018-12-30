@@ -1,0 +1,35 @@
+{% extends 'base.html.twig'%}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/register.css')}}">
+{% endblock %}
+{% block body %}
+
+    <div id="msform">
+
+        <fieldset>
+            <h2 class="fs-title">Create your account</h2>
+            <h3 class="fs-subtitle">vos information personnelle</h3>
+            {{ form_start(form)}}
+            {{form_row(form.nom,{'label':'Nom ','attr':{'placeholder':'Nom'}})}}
+            {{form_row(form.prenom,{'label':'Prenom ','attr':{'placeholder':'Prenom','class': 'tst'}})}}
+            {{form_row(form.date_naissance,{'label':'Date de naissance '})}}
+            {{form_row(form.nationalite,{'label':'nationalite','attr':{'placeholder':'Nationalite'}})}}
+            {{form_row(form.adresse,{'label':'adresse','attr':{'placeholder':'Adresse'}})}}
+            {{form_row(form.tel,{'label':'tel','attr':{'placeholder':'tel'}})}}
+
+
+            <h2 class="fs-title">Create your account</h2>
+            <h3 class="fs-subtitle"> information Login</h3>
+
+            {{form_row(form.email,{'label':'Email ','attr':{'placeholder':'Email'}})}}
+            {{form_row(form.username,{'label':'username ','attr':{'placeholder':'Username'}})}}
+            {{form_row(form.password,{'label':'Mot de passe ','attr':{'placeholder':'Mot de passe'}})}}
+
+            {{form_row(form.confirm_password,{'label':'Confirmer Mot de passe ','attr':{'placeholder':'Confirmer Mot de passe'}})}}
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Inscription</button>
+            <button class="btn btn-lg btn-primary btn-block" type="reset">Annuler</button>
+            {{ form_end(form)}}
+        </fieldset>
+    </div>
+
+{% endblock %}

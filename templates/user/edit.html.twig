@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+    <h1>Edit User</h1>
+
+        <form action="{{  path('updateAvatar',{'id':app.user.id})}}"   method="post" enctype="multipart/form-data">
+            <input  class="form-control" type="file" name="img[]" multiple />
+            <input type="submit" value="submit">
+        </form>
+    {{ include('user/_form.html.twig', {'button_label': 'Edit'}) }}
+
+    {% else %}
+        <div class="alert alert-danger" role="alert">
+
+            Vous besoin de connecter avant !!
+        </div>
+{% endif %}
+
+{% endblock %}

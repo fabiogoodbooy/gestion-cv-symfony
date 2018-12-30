@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Langue{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+    <h1>Create new Langue</h1>
+
+    {{ include('langue/_form.html.twig') }}
+
+
+    {% else %}
+        <div class="alert alert-danger" role="alert">
+
+            Vous besoin de connecter avant !!
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Formation{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+    <h1>Create new Formation</h1>
+
+    {{ include('formation/_form.html.twig') }}
+
+    {% else %}
+        <div class="alert alert-danger" role="alert">
+
+            Vous besoin de connecter avant !!
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock %}
+{% block body %}
+<body id="LoginForm">
+    <div class="container">
+    
+    <div class="login-form">
+    <div class="main-div">
+        <div class="panel">
+      
+      <img src= "https://myepi.episousse.com.tn/assets/images/users/avatar.png" style="
+    width: 190px;
+    text-align: center;
+    margin-bottom: 20px;
+">
+      </div>
+        <form id="Login" action="{{ path('security_login') }}" method="post">
+
+            <div class="form-group">
+
+
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required autofocus name="_username">
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required name="_password">
+
+            </div>
+            <a href= "{{path('security_registration')}}"><button type="button" class="btn btn-danger float-left">inscription</button> </a>
+            <button type="submit" class="btn btn-danger float-right">Login</button>
+
+        </form>
+        </div>
+
+    </div>
+    </div>
+    </div>
+</body>
+    {% endblock %}
+    
+     
