@@ -20,7 +20,7 @@ class UserType extends AbstractType
             ->add('nationalite')
             ->add('adresse')
             ->add('tel')
-            ->add('avatar')
+
 
         ;
     }

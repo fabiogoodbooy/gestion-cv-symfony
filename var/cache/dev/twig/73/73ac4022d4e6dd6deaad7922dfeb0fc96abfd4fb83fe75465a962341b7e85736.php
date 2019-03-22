@@ -72,19 +72,21 @@ class __TwigTemplate_2bad48d086d0f0f6037128d133c4f0584377faad8d144925f1d4b0e6f32
         echo "    ";
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 6, $this->source); })()), "user", array())) {
             // line 7
-            echo "    <h1>Create new Formation</h1>
+            echo "<div class=\"page\">
+    <h1>Ajouter un Formation</h1>
 
     ";
-            // line 9
+            // line 10
             echo twig_include($this->env, $context, "formation/_form.html.twig");
             echo "
 
     ";
         } else {
-            // line 12
+            // line 13
             echo "        <div class=\"alert alert-danger\" role=\"alert\">
 
             Vous besoin de connecter avant !!
+        </div>
         </div>
     ";
         }
@@ -108,7 +110,7 @@ class __TwigTemplate_2bad48d086d0f0f6037128d133c4f0584377faad8d144925f1d4b0e6f32
 
     public function getDebugInfo()
     {
-        return array (  85 => 12,  79 => 9,  75 => 7,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  86 => 13,  80 => 10,  75 => 7,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -119,7 +121,8 @@ class __TwigTemplate_2bad48d086d0f0f6037128d133c4f0584377faad8d144925f1d4b0e6f32
 
 {% block body %}
     {% if app.user %}
-    <h1>Create new Formation</h1>
+<div class=\"page\">
+    <h1>Ajouter un Formation</h1>
 
     {{ include('formation/_form.html.twig') }}
 
@@ -127,6 +130,7 @@ class __TwigTemplate_2bad48d086d0f0f6037128d133c4f0584377faad8d144925f1d4b0e6f32
         <div class=\"alert alert-danger\" role=\"alert\">
 
             Vous besoin de connecter avant !!
+        </div>
         </div>
     {% endif %}
 {% endblock %}

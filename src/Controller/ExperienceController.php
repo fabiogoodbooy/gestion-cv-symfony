@@ -28,7 +28,7 @@ class ExperienceController extends AbstractController
      * @Route("/newExperience/{id}", name="experience_new", methods={"GET","POST"})
      */
     public function newExp(Request $request,$id): Response
-    {
+    {$this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $repository =$this->getDoctrine()->getManager()->getRepository(user::class);
         $user=$repository->find($id);
         $experience = new Experience();

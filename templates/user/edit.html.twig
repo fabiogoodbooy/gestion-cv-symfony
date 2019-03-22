@@ -4,19 +4,78 @@
 
 {% block body %}
     {% if app.user %}
-    <h1>Edit User</h1>
-
+<div class="page">
+    <h1>Modifier photo de profile </h1>
+<br>
+        <br>
+        <br>
         <form action="{{  path('updateAvatar',{'id':app.user.id})}}"   method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col">
+
             <input  class="form-control" type="file" name="img[]" multiple />
-            <input type="submit" value="submit">
+                </div>
+                <div class="col">
+            <input type="submit" class="btn btn-danger" value="Update">
+                </div>
+            </div>
+
         </form>
-    {{ include('user/_form.html.twig', {'button_label': 'Edit'}) }}
+        <br>
+        <br>
+
+        <hr>
+        <hr>
+        <br>
+
+        <h1>Modifier les information</h1>
+        <br>
+
+        {{ form_start(form)}}
+<div class="row">
+    <div class="col">
+        {{form_row(form.nom,{'label':'Nom ','attr':{'placeholder':'Nom'}})}}
+    </div>
+    <div class="col">
+        {{form_row(form.prenom,{'label':'Prenom ','attr':{'placeholder':'Prenom','class': 'tst'}})}}
+    </div>
+</div>
+        <div class="row">
+    <div class="col">
+        {{form_row(form.email,{'label':'Email ','attr':{'placeholder':'Email'}})}}
+    </div>
+    <div class="col">
+        {{form_row(form.username,{'label':'username ','attr':{'placeholder':'Username'}})}}
+    </div>
+        </div>
+        <div class="row">
+    <div class="col">
+        {{form_row(form.datenaissance,{'label':'Date de naissance '})}}
+    </div>
+    <div class="col">
+        {{form_row(form.nationalite,{'label':'nationalite','attr':{'placeholder':'Nationalite'}})}}
+    </div>
+        </div>
+        <div class="row">
+    <div class="col">
+        {{form_row(form.adresse,{'label':'adresse','attr':{'placeholder':'Adresse'}})}}
+    </div>
+    <div class="col">
+        {{form_row(form.tel,{'label':'tel','attr':{'placeholder':'tel'}})}}
+    </div>
+
+    </div>
+
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Update</button>
+        {{ form_end(form)}}
+
 
     {% else %}
         <div class="alert alert-danger" role="alert">
 
             Vous besoin de connecter avant !!
         </div>
-{% endif %}
+        </div>
+    {% endif %}
 
 {% endblock %}

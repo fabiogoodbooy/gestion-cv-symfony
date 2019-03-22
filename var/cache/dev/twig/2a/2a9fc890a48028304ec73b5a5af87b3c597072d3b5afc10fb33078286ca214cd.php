@@ -72,7 +72,7 @@ class __TwigTemplate_f118f5c50ac61e8f44110cacc16f30690e42002b2e9e4252645289f961a
             display: inline-block;
             padding: 8px;
             color: white;
-            background-color: #000;
+            background-color: #ea5454;
             text-align: center;
             cursor: pointer;
             width: 100%;
@@ -232,7 +232,7 @@ class __TwigTemplate_f118f5c50ac61e8f44110cacc16f30690e42002b2e9e4252645289f961a
             display: inline-block;
             padding: 8px;
             color: white;
-            background-color: #000;
+            background-color: #ea5454;
             text-align: center;
             cursor: pointer;
             width: 100%;

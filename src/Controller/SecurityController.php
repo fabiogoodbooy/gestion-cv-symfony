@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Specialite;
 use App\Form\RegistrationType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -17,6 +18,8 @@ class SecurityController extends AbstractController
      */
     public function registration(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder)
     {
+        $repository =$this->getDoctrine()->getManager()->getRepository(specialite::class);
+        $spe=$repository->findAll();
             $user = new User();
         $form = $this->createForm(RegistrationType::class, $user);
         $form->handleRequest($request);
@@ -27,12 +30,13 @@ class SecurityController extends AbstractController
         $user->setPassword($hash);
         $user->setAvatar('avatars/default.jpg');
 
+
             $manager->persist($user);
             $manager->flush();
             return $this->redirectToRoute('security_login');
         }
         
-        return $this->render('security/registration.html.twig', ['form' => $form->createView()]);
+        return $this->render('security/registration.html.twig', ['form' => $form->createView(),'spe'=>$spe]);
    
     }
     /**
@@ -40,7 +44,8 @@ class SecurityController extends AbstractController
      */
 
     public function login(){
-       return $this->render('security/login.html.twig'); 
+
+       return $this->render('security/login.html.twig');
     }
 
     /**

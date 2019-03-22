@@ -29,6 +29,7 @@ class FormationController extends AbstractController
      */
     public function newform(Request $request,$id): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $repository =$this->getDoctrine()->getManager()->getRepository(user::class);
         $user=$repository->find($id);
         $formation = new Formation();

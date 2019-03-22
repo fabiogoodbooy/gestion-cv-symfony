@@ -50,7 +50,10 @@ class __TwigTemplate_21a6d8d24920c32135128154f50a27f27726f73487783f52b5e032f9471
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "    <div class=\"container\">
+        echo "    ";
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 3, $this->source); })()), "user", array()), "email", array()) == "admin@admin.fr")) {
+            // line 4
+            echo "    <div class=\"container\">
 <script type=\"text/javascript\">
     \$(document).ready(function() {
         //alert(\"cc\");
@@ -89,48 +92,49 @@ class __TwigTemplate_21a6d8d24920c32135128154f50a27f27726f73487783f52b5e032f9471
     </tr>
     </thead>
     <tbody>
+
     ";
-        // line 42
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["condidat"]) || array_key_exists("condidat", $context) ? $context["condidat"] : (function () { throw new Twig_Error_Runtime('Variable "condidat" does not exist.', 42, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["con"]) {
-            // line 43
-            echo "
+            // line 44
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["condidat"]) || array_key_exists("condidat", $context) ? $context["condidat"] : (function () { throw new Twig_Error_Runtime('Variable "condidat" does not exist.', 44, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["con"]) {
+                // line 45
+                echo "
     <tr>
 
         <td>";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["con"], "id", array()), "html", null, true);
-            echo "</td>
+                // line 48
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["con"], "id", array()), "html", null, true);
+                echo "</td>
         <td>";
-            // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["con"], "nom", array()), "html", null, true);
-            echo "</td>
+                // line 49
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["con"], "nom", array()), "html", null, true);
+                echo "</td>
         <td>";
-            // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["con"], "prenom", array()), "html", null, true);
-            echo "</td>
+                // line 50
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["con"], "prenom", array()), "html", null, true);
+                echo "</td>
         <td>";
-            // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["con"], "email", array()), "html", null, true);
-            echo "</td>
+                // line 51
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["con"], "email", array()), "html", null, true);
+                echo "</td>
         <td>";
-            // line 50
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["con"], "specialite", array()), "titre", array()), "html", null, true);
-            echo "</td>
+                // line 52
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["con"], "specialite", array()), "titre", array()), "html", null, true);
+                echo "</td>
         <td>  <a href=\"";
-            // line 51
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cv", array("id" => twig_get_attribute($this->env, $this->source, $context["con"], "id", array()))), "html", null, true);
-            echo "\">Afficher cv</a></td>
+                // line 53
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cv", array("id" => twig_get_attribute($this->env, $this->source, $context["con"], "id", array()))), "html", null, true);
+                echo "\">Afficher cv</a></td>
     </tr>
 
   ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['con'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
-        echo "
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['con'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 57
+            echo "
     </tbody>
     <tfoot>
     <tr>
@@ -144,7 +148,8 @@ class __TwigTemplate_21a6d8d24920c32135128154f50a27f27726f73487783f52b5e032f9471
     </tfoot>
 </table>
     </div>
-";
+    ";
+        }
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -165,13 +170,14 @@ class __TwigTemplate_21a6d8d24920c32135128154f50a27f27726f73487783f52b5e032f9471
 
     public function getDebugInfo()
     {
-        return array (  133 => 55,  123 => 51,  119 => 50,  115 => 49,  111 => 48,  107 => 47,  103 => 46,  98 => 43,  94 => 42,  53 => 3,  44 => 2,  15 => 1,);
+        return array (  137 => 57,  127 => 53,  123 => 52,  119 => 51,  115 => 50,  111 => 49,  107 => 48,  102 => 45,  98 => 44,  56 => 4,  53 => 3,  44 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 {% block body %}
+    {% if app.user.email == \"admin@admin.fr\" %}
     <div class=\"container\">
 <script type=\"text/javascript\">
     \$(document).ready(function() {
@@ -211,6 +217,7 @@ class __TwigTemplate_21a6d8d24920c32135128154f50a27f27726f73487783f52b5e032f9471
     </tr>
     </thead>
     <tbody>
+
     {% for con in condidat %}
 
     <tr>
@@ -238,6 +245,7 @@ class __TwigTemplate_21a6d8d24920c32135128154f50a27f27726f73487783f52b5e032f9471
     </tfoot>
 </table>
     </div>
+    {% endif %}
 {% endblock %}", "admin/allCv.html.twig", "/home/fabio/Desktop/gestion-cv-symfony/templates/admin/allCv.html.twig");
     }
 }

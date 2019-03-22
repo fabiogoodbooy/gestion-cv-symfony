@@ -5,12 +5,20 @@
 
 					<nav>
 						<ul>
+							{% if app.user.email != "admin@admin.fr" %}
 							<li><a href="{{ path('home') }}" class="active">Home</a></li>
                                                         
 							<li><a href="{{ path('condidat', {'id' : app.user.id }) }}">Votre Cv</a></li>
+							<li><a href="{{ path('profile')}}">Votre profile</a></li>
 							<ul class="dropdown-menu">
-                                <li><a href="{{ path('profile')}}">Votre profile</a></li>
 
+								<li><a href="{{ path('security_logout')}}">logout</a></li>
+
+								{% else %}
+									<li><a href="{{ path('allCv') }}" class="active">Tous les CV</a></li>
+								<ul class="dropdown-menu">
+									<li><a href="{{ path('security_logout')}}">logout</a></li>
+								{% endif %}
 							</ul>
 
 							

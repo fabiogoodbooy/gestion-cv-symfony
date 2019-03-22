@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    {% if app.user.email == "admin@admin.fr" %}
     <div class="container">
 <script type="text/javascript">
     $(document).ready(function() {
@@ -39,6 +40,7 @@
     </tr>
     </thead>
     <tbody>
+
     {% for con in condidat %}
 
     <tr>
@@ -66,4 +68,5 @@
     </tfoot>
 </table>
     </div>
+    {% endif %}
 {% endblock %}

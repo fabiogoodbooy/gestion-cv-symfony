@@ -21,7 +21,7 @@ class CondidatController extends AbstractController
      */
     public function index($id)
     {
-
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $repository =$this->getDoctrine()->getManager()->getRepository(user::class);
         $user=$repository->find($id);
@@ -40,7 +40,7 @@ class CondidatController extends AbstractController
      * @Route("/profile", name ="profile")
      */
     public function showProfile(){
-
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('condidat/profile.html.twig');
     }
 
@@ -49,6 +49,7 @@ class CondidatController extends AbstractController
      */
     public function editProfile(Request $request,User $user)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(RegistrationType::class,$user);
         $form->handleRequest($request);
 
@@ -68,6 +69,7 @@ class CondidatController extends AbstractController
      * @Route("/supprimeformation/{id}/{id_user}", name ="supprimerFormation")
      */
     public function  supprimerinformation($id,$id_user){
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $repository =$this->getDoctrine()->getRepository(formation::class)->find($id);
         $em=$this->getDoctrine()->getManager();
         $em ->remove($repository);
@@ -79,6 +81,7 @@ class CondidatController extends AbstractController
      * @Route("/allCv" , name="allCv")
      */
     public function  allCv(){
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $repository =$this->getDoctrine()->getManager()->getRepository(user::class);
         $condidat=$repository->findAll();
         return $this->render('admin/allCv.html.twig',array('condidat'=>$condidat));
@@ -89,6 +92,7 @@ class CondidatController extends AbstractController
      */
 
     public function  supprimerlangue($id,$id_user){
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $repository =$this->getDoctrine()->getRepository(langue::class)->find($id);
         $em=$this->getDoctrine()->getManager();
         $em ->remove($repository);
@@ -102,6 +106,7 @@ class CondidatController extends AbstractController
      */
 
     public function  supprimerexperionce($id,$id_user){
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $repository =$this->getDoctrine()->getRepository(experience::class)->find($id);
         $em=$this->getDoctrine()->getManager();
         $em ->remove($repository);
@@ -114,7 +119,7 @@ class CondidatController extends AbstractController
      */
     public function cv($id)
     {
-
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $repository =$this->getDoctrine()->getManager()->getRepository(user::class);
         $user=$repository->find($id);
@@ -133,6 +138,7 @@ class CondidatController extends AbstractController
      * @Route("/", name="home")
      */
     public function home(){
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('home.html.twig');
     }
 

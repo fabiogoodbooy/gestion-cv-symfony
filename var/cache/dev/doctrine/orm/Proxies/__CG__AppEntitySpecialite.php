@@ -232,4 +232,15 @@ class Specialite extends \App\Entity\Specialite implements \Doctrine\ORM\Proxy\P
         return parent::setUser($user);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }

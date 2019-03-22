@@ -31,10 +31,6 @@ class __TwigTemplate_6bc5139a4bb80934452e516c54f9b5abd95b340d74b5a685c55c43c21de
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/showCv.html.twig"));
 
-        // line 1
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 1, $this->source); })()), "user", array())) {
-        }
-        // line 3
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -242,7 +238,7 @@ class __TwigTemplate_6bc5139a4bb80934452e516c54f9b5abd95b340d74b5a685c55c43c21de
             </div>
 
         </div>
-
+   
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -264,12 +260,12 @@ class __TwigTemplate_6bc5139a4bb80934452e516c54f9b5abd95b340d74b5a685c55c43c21de
 
     public function getDebugInfo()
     {
-        return array (  239 => 97,  228 => 92,  223 => 91,  219 => 90,  207 => 80,  193 => 72,  186 => 70,  177 => 67,  173 => 66,  161 => 56,  145 => 48,  142 => 47,  136 => 45,  132 => 43,  130 => 42,  126 => 41,  122 => 40,  119 => 39,  115 => 38,  100 => 26,  93 => 22,  89 => 21,  85 => 20,  81 => 19,  77 => 18,  73 => 17,  67 => 16,  57 => 8,  48 => 7,  38 => 3,  35 => 1,  15 => 3,);
+        return array (  235 => 97,  224 => 92,  219 => 91,  215 => 90,  203 => 80,  189 => 72,  182 => 70,  173 => 67,  169 => 66,  157 => 56,  141 => 48,  138 => 47,  132 => 45,  128 => 43,  126 => 42,  122 => 41,  118 => 40,  115 => 39,  111 => 38,  96 => 26,  89 => 22,  85 => 21,  81 => 20,  77 => 19,  73 => 18,  69 => 17,  63 => 16,  53 => 8,  44 => 7,  15 => 3,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% if app.user %}
+        return new Twig_Source("
 
     {% extends 'base.html.twig' %}
 
@@ -371,10 +367,9 @@ class __TwigTemplate_6bc5139a4bb80934452e516c54f9b5abd95b340d74b5a685c55c43c21de
             </div>
 
         </div>
-
+   
     {% endblock %}
 
-{% endif %}
 ", "admin/showCv.html.twig", "/home/fabio/Desktop/gestion-cv-symfony/templates/admin/showCv.html.twig");
     }
 }

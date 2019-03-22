@@ -59,6 +59,7 @@ class CvController extends AbstractController
      */
     public function edit(Request $request, Cv $cv): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(CvType::class, $cv);
         $form->handleRequest($request);
 

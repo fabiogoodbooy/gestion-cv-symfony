@@ -33,22 +33,44 @@ class __TwigTemplate_d12656062eaa1de14d9de51617fc0310598ac2cde5f22e0e723e9c2dc12
 
 \t\t\t\t\t<nav>
 \t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t<li><a href=\"";
+\t\t\t\t\t\t\t";
         // line 8
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\" class=\"active\">Home</a></li>
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 8, $this->source); })()), "user", array()), "email", array()) != "admin@admin.fr")) {
+            // line 9
+            echo "\t\t\t\t\t\t\t<li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\" class=\"active\">Home</a></li>
                                                         
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 10
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("condidat", array("id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 10, $this->source); })()), "user", array()), "id", array()))), "html", null, true);
-        echo "\">Votre Cv</a></li>
+            // line 11
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("condidat", array("id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 11, $this->source); })()), "user", array()), "id", array()))), "html", null, true);
+            echo "\">Votre Cv</a></li>
+\t\t\t\t\t\t\t<li><a href=\"";
+            // line 12
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
+            echo "\">Votre profile</a></li>
 \t\t\t\t\t\t\t<ul class=\"dropdown-menu\">
-                                <li><a href=\"";
-        // line 12
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
-        echo "\">Votre profile</a></li>
 
-\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t<li><a href=\"";
+            // line 15
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
+            echo "\">logout</a></li>
+
+\t\t\t\t\t\t\t\t";
+        } else {
+            // line 18
+            echo "\t\t\t\t\t\t\t\t\t<li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("allCv");
+            echo "\" class=\"active\">Tous les CV</a></li>
+\t\t\t\t\t\t\t\t<ul class=\"dropdown-menu\">
+\t\t\t\t\t\t\t\t\t<li><a href=\"";
+            // line 20
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
+            echo "\">logout</a></li>
+\t\t\t\t\t\t\t\t";
+        }
+        // line 22
+        echo "\t\t\t\t\t\t\t</ul>
 
 \t\t\t\t\t\t\t
 \t\t\t\t\t\t\t
@@ -82,7 +104,7 @@ class __TwigTemplate_d12656062eaa1de14d9de51617fc0310598ac2cde5f22e0e723e9c2dc12
 
     public function getDebugInfo()
     {
-        return array (  48 => 12,  43 => 10,  38 => 8,  29 => 1,);
+        return array (  73 => 22,  68 => 20,  62 => 18,  56 => 15,  50 => 12,  46 => 11,  40 => 9,  38 => 8,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -94,12 +116,20 @@ class __TwigTemplate_d12656062eaa1de14d9de51617fc0310598ac2cde5f22e0e723e9c2dc12
 
 \t\t\t\t\t<nav>
 \t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t{% if app.user.email != \"admin@admin.fr\" %}
 \t\t\t\t\t\t\t<li><a href=\"{{ path('home') }}\" class=\"active\">Home</a></li>
                                                         
 \t\t\t\t\t\t\t<li><a href=\"{{ path('condidat', {'id' : app.user.id }) }}\">Votre Cv</a></li>
+\t\t\t\t\t\t\t<li><a href=\"{{ path('profile')}}\">Votre profile</a></li>
 \t\t\t\t\t\t\t<ul class=\"dropdown-menu\">
-                                <li><a href=\"{{ path('profile')}}\">Votre profile</a></li>
 
+\t\t\t\t\t\t\t\t<li><a href=\"{{ path('security_logout')}}\">logout</a></li>
+
+\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\t<li><a href=\"{{ path('allCv') }}\" class=\"active\">Tous les CV</a></li>
+\t\t\t\t\t\t\t\t<ul class=\"dropdown-menu\">
+\t\t\t\t\t\t\t\t\t<li><a href=\"{{ path('security_logout')}}\">logout</a></li>
+\t\t\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t\t\t</ul>
 
 \t\t\t\t\t\t\t

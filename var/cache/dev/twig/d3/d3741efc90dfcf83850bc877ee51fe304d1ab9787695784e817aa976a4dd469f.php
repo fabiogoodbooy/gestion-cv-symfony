@@ -72,23 +72,22 @@ class __TwigTemplate_f26e4f441aa63a8faba9cf92a0e67489ceb8a277411fd5bfe72b89b17ab
         echo "    ";
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 7, $this->source); })()), "user", array())) {
             // line 8
-            echo "    <h1>Create new Experience</h1>
+            echo "<div class=\"page\">
+    <h1>Ajouter une  Experience</h1>
 
     ";
-            // line 10
+            // line 11
             echo twig_include($this->env, $context, "experience/_form.html.twig");
             echo "
 
-    <a href=\"";
-            // line 12
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("experience_index");
-            echo "\">back to list</a>
+
         ";
         } else {
-            // line 14
+            // line 15
             echo "            <div class=\"alert alert-danger\" role=\"alert\">
 
                 Vous besoin de connecter avant !!
+            </div>
             </div>
 ";
         }
@@ -112,7 +111,7 @@ class __TwigTemplate_f26e4f441aa63a8faba9cf92a0e67489ceb8a277411fd5bfe72b89b17ab
 
     public function getDebugInfo()
     {
-        return array (  89 => 14,  84 => 12,  79 => 10,  75 => 8,  72 => 7,  63 => 6,  45 => 4,  15 => 2,);
+        return array (  87 => 15,  80 => 11,  75 => 8,  72 => 7,  63 => 6,  45 => 4,  15 => 2,);
     }
 
     public function getSourceContext()
@@ -124,15 +123,17 @@ class __TwigTemplate_f26e4f441aa63a8faba9cf92a0e67489ceb8a277411fd5bfe72b89b17ab
 
 {% block body %}
     {% if app.user %}
-    <h1>Create new Experience</h1>
+<div class=\"page\">
+    <h1>Ajouter une  Experience</h1>
 
     {{ include('experience/_form.html.twig') }}
 
-    <a href=\"{{ path('experience_index') }}\">back to list</a>
+
         {% else %}
             <div class=\"alert alert-danger\" role=\"alert\">
 
                 Vous besoin de connecter avant !!
+            </div>
             </div>
 {% endif %}
 {% endblock %}

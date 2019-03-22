@@ -72,30 +72,116 @@ class __TwigTemplate_e55a93ce5409c547677c47c3810fa688707d9f96595a8ddacebc3a45779
         echo "    ";
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 6, $this->source); })()), "user", array())) {
             // line 7
-            echo "    <h1>Edit User</h1>
-
+            echo "<div class=\"page\">
+    <h1>Modifier photo de profile </h1>
+<br>
+        <br>
+        <br>
         <form action=\"";
-            // line 9
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("updateAvatar", array("id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 9, $this->source); })()), "user", array()), "id", array()))), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("updateAvatar", array("id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 12, $this->source); })()), "user", array()), "id", array()))), "html", null, true);
             echo "\"   method=\"post\" enctype=\"multipart/form-data\">
+            <div class=\"row\">
+                <div class=\"col\">
+
             <input  class=\"form-control\" type=\"file\" name=\"img[]\" multiple />
-            <input type=\"submit\" value=\"submit\">
+                </div>
+                <div class=\"col\">
+            <input type=\"submit\" class=\"btn btn-danger\" value=\"Update\">
+                </div>
+            </div>
+
         </form>
-    ";
-            // line 13
-            echo twig_include($this->env, $context, "user/_form.html.twig", array("button_label" => "Edit"));
+        <br>
+        <br>
+
+        <hr>
+        <hr>
+        <br>
+
+        <h1>Modifier les information</h1>
+        <br>
+
+        ";
+            // line 34
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 34, $this->source); })()), 'form_start');
             echo "
+<div class=\"row\">
+    <div class=\"col\">
+        ";
+            // line 37
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 37, $this->source); })()), "nom", array()), 'row', array("label" => "Nom ", "attr" => array("placeholder" => "Nom")));
+            echo "
+    </div>
+    <div class=\"col\">
+        ";
+            // line 40
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 40, $this->source); })()), "prenom", array()), 'row', array("label" => "Prenom ", "attr" => array("placeholder" => "Prenom", "class" => "tst")));
+            echo "
+    </div>
+</div>
+        <div class=\"row\">
+    <div class=\"col\">
+        ";
+            // line 45
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 45, $this->source); })()), "email", array()), 'row', array("label" => "Email ", "attr" => array("placeholder" => "Email")));
+            echo "
+    </div>
+    <div class=\"col\">
+        ";
+            // line 48
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 48, $this->source); })()), "username", array()), 'row', array("label" => "username ", "attr" => array("placeholder" => "Username")));
+            echo "
+    </div>
+        </div>
+        <div class=\"row\">
+    <div class=\"col\">
+        ";
+            // line 53
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 53, $this->source); })()), "datenaissance", array()), 'row', array("label" => "Date de naissance "));
+            echo "
+    </div>
+    <div class=\"col\">
+        ";
+            // line 56
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 56, $this->source); })()), "nationalite", array()), 'row', array("label" => "nationalite", "attr" => array("placeholder" => "Nationalite")));
+            echo "
+    </div>
+        </div>
+        <div class=\"row\">
+    <div class=\"col\">
+        ";
+            // line 61
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 61, $this->source); })()), "adresse", array()), 'row', array("label" => "adresse", "attr" => array("placeholder" => "Adresse")));
+            echo "
+    </div>
+    <div class=\"col\">
+        ";
+            // line 64
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 64, $this->source); })()), "tel", array()), 'row', array("label" => "tel", "attr" => array("placeholder" => "tel")));
+            echo "
+    </div>
+
+    </div>
+
+        <button class=\"btn btn-lg btn-danger btn-block\" type=\"submit\">Update</button>
+        ";
+            // line 70
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 70, $this->source); })()), 'form_end');
+            echo "
+
 
     ";
         } else {
-            // line 16
+            // line 74
             echo "        <div class=\"alert alert-danger\" role=\"alert\">
 
             Vous besoin de connecter avant !!
         </div>
-";
+        </div>
+    ";
         }
-        // line 21
+        // line 80
         echo "
 ";
         
@@ -118,7 +204,7 @@ class __TwigTemplate_e55a93ce5409c547677c47c3810fa688707d9f96595a8ddacebc3a45779
 
     public function getDebugInfo()
     {
-        return array (  99 => 21,  92 => 16,  86 => 13,  79 => 9,  75 => 7,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  185 => 80,  177 => 74,  170 => 70,  161 => 64,  155 => 61,  147 => 56,  141 => 53,  133 => 48,  127 => 45,  119 => 40,  113 => 37,  107 => 34,  82 => 12,  75 => 7,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -129,20 +215,79 @@ class __TwigTemplate_e55a93ce5409c547677c47c3810fa688707d9f96595a8ddacebc3a45779
 
 {% block body %}
     {% if app.user %}
-    <h1>Edit User</h1>
-
+<div class=\"page\">
+    <h1>Modifier photo de profile </h1>
+<br>
+        <br>
+        <br>
         <form action=\"{{  path('updateAvatar',{'id':app.user.id})}}\"   method=\"post\" enctype=\"multipart/form-data\">
+            <div class=\"row\">
+                <div class=\"col\">
+
             <input  class=\"form-control\" type=\"file\" name=\"img[]\" multiple />
-            <input type=\"submit\" value=\"submit\">
+                </div>
+                <div class=\"col\">
+            <input type=\"submit\" class=\"btn btn-danger\" value=\"Update\">
+                </div>
+            </div>
+
         </form>
-    {{ include('user/_form.html.twig', {'button_label': 'Edit'}) }}
+        <br>
+        <br>
+
+        <hr>
+        <hr>
+        <br>
+
+        <h1>Modifier les information</h1>
+        <br>
+
+        {{ form_start(form)}}
+<div class=\"row\">
+    <div class=\"col\">
+        {{form_row(form.nom,{'label':'Nom ','attr':{'placeholder':'Nom'}})}}
+    </div>
+    <div class=\"col\">
+        {{form_row(form.prenom,{'label':'Prenom ','attr':{'placeholder':'Prenom','class': 'tst'}})}}
+    </div>
+</div>
+        <div class=\"row\">
+    <div class=\"col\">
+        {{form_row(form.email,{'label':'Email ','attr':{'placeholder':'Email'}})}}
+    </div>
+    <div class=\"col\">
+        {{form_row(form.username,{'label':'username ','attr':{'placeholder':'Username'}})}}
+    </div>
+        </div>
+        <div class=\"row\">
+    <div class=\"col\">
+        {{form_row(form.datenaissance,{'label':'Date de naissance '})}}
+    </div>
+    <div class=\"col\">
+        {{form_row(form.nationalite,{'label':'nationalite','attr':{'placeholder':'Nationalite'}})}}
+    </div>
+        </div>
+        <div class=\"row\">
+    <div class=\"col\">
+        {{form_row(form.adresse,{'label':'adresse','attr':{'placeholder':'Adresse'}})}}
+    </div>
+    <div class=\"col\">
+        {{form_row(form.tel,{'label':'tel','attr':{'placeholder':'tel'}})}}
+    </div>
+
+    </div>
+
+        <button class=\"btn btn-lg btn-danger btn-block\" type=\"submit\">Update</button>
+        {{ form_end(form)}}
+
 
     {% else %}
         <div class=\"alert alert-danger\" role=\"alert\">
 
             Vous besoin de connecter avant !!
         </div>
-{% endif %}
+        </div>
+    {% endif %}
 
 {% endblock %}
 ", "user/edit.html.twig", "/home/fabio/Desktop/gestion-cv-symfony/templates/user/edit.html.twig");

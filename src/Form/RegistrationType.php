@@ -24,6 +24,7 @@ class RegistrationType extends AbstractType
             ->add('nationalite')
             ->add('adresse')
             ->add('tel')
+            ->add('specialite')
         ;
     }
 

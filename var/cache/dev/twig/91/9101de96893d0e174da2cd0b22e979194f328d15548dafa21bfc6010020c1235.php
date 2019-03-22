@@ -69,18 +69,28 @@ class __TwigTemplate_d8b2c56bb882ab5101253c2270039d206b8088ad3f75e0ac91f18a40e0e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Langue</h1>
+        echo "    ";
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 6, $this->source); })()), "user", array())) {
+            // line 7
+            echo "<div class=\"page\">
+    <h1>Ajouter un Langue</h1>
 
     ";
-        // line 8
-        echo twig_include($this->env, $context, "langue/_form.html.twig");
-        echo "
+            // line 10
+            echo twig_include($this->env, $context, "langue/_form.html.twig");
+            echo "
 
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("langue_index");
-        echo "\">back to list</a>
-";
+
+    ";
+        } else {
+            // line 14
+            echo "        <div class=\"alert alert-danger\" role=\"alert\">
+
+            Vous besoin de connecter avant !!
+        </div>
+        </div>
+    ";
+        }
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -101,7 +111,7 @@ class __TwigTemplate_d8b2c56bb882ab5101253c2270039d206b8088ad3f75e0ac91f18a40e0e
 
     public function getDebugInfo()
     {
-        return array (  81 => 10,  76 => 8,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  87 => 14,  80 => 10,  75 => 7,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -111,11 +121,20 @@ class __TwigTemplate_d8b2c56bb882ab5101253c2270039d206b8088ad3f75e0ac91f18a40e0e
 {% block title %}New Langue{% endblock %}
 
 {% block body %}
-    <h1>Create new Langue</h1>
+    {% if app.user %}
+<div class=\"page\">
+    <h1>Ajouter un Langue</h1>
 
     {{ include('langue/_form.html.twig') }}
 
-    <a href=\"{{ path('langue_index') }}\">back to list</a>
+
+    {% else %}
+        <div class=\"alert alert-danger\" role=\"alert\">
+
+            Vous besoin de connecter avant !!
+        </div>
+        </div>
+    {% endif %}
 {% endblock %}
 ", "langue/new.html.twig", "/home/fabio/Desktop/gestion-cv-symfony/templates/langue/new.html.twig");
     }

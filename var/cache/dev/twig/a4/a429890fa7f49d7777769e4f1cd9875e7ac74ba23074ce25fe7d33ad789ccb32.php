@@ -89,34 +89,46 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
             echo "
                         </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"";
+                        ";
             // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("condidat", array("id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 38, $this->source); })()), "user", array()), "id", array()))), "html", null, true);
-            echo "\">Mon CV</a>
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 38, $this->source); })()), "user", array()), "email", array()) != "admin@admin.fr")) {
+                // line 39
+                echo "                        <a class=\"dropdown-item\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("condidat", array("id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 39, $this->source); })()), "user", array()), "id", array()))), "html", null, true);
+                echo "\">Mon CV</a>
                         <a class=\"dropdown-item\" href=\"";
-            // line 39
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
-            echo "\">Profile</a>
-                        <div class=\"dropdown-divider\"></div>
+                // line 40
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
+                echo "\">Profile</a>
+                        ";
+            }
+            // line 42
+            echo "                        <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"";
-            // line 41
+            // line 43
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
             echo "\">logout</a>
 
                     </div>
                     ";
         } else {
-            // line 45
+            // line 47
             echo "                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                            Dropdown
+                            Connexion
                         </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"#\">Connexion</a>
-                        <a class=\"dropdown-item\" href=\"#\">Inscription</a>
+                        <a class=\"dropdown-item\" href=\"";
+            // line 51
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
+            echo "\">Connexion</a>
+                        <a class=\"dropdown-item\" href=\"";
+            // line 52
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_registration");
+            echo "\">Inscription</a>
                     </div>
                     ";
         }
-        // line 53
+        // line 55
         echo "            </ul>
 
         </div>
@@ -129,17 +141,17 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         <div class=\"content\">
             <div class=\"container\">
                 ";
-        // line 64
-        $this->displayBlock('body', $context, $blocks);
         // line 66
+        $this->displayBlock('body', $context, $blocks);
+        // line 68
         echo "            </div>
         </div>
     </div>
 
         ";
-        // line 70
+        // line 72
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 79
+        // line 82
         echo "    </body>
 </html>
 ";
@@ -188,7 +200,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 64
+    // line 66
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -197,7 +209,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 65
+        // line 67
         echo "                ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -207,7 +219,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     }
 
-    // line 70
+    // line 72
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -216,17 +228,18 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 71
+        // line 73
         echo "        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\" integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\" crossorigin=\"anonymous\"></script>
 <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\" crossorigin=\"anonymous\"></script>
       <script src ";
-        // line 74
+        // line 76
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/app.js"), "html", null, true);
         echo "></script>
 
             <script src=\"http://code.jquery.com/jquery-1.7.2.min.js\"></script>
             <script src=\"https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js\"></script>
+
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -248,7 +261,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
     public function getDebugInfo()
     {
-        return array (  225 => 74,  220 => 71,  211 => 70,  201 => 65,  192 => 64,  182 => 14,  173 => 13,  155 => 5,  143 => 79,  141 => 70,  135 => 66,  133 => 64,  120 => 53,  110 => 45,  103 => 41,  98 => 39,  94 => 38,  86 => 35,  83 => 34,  81 => 33,  71 => 26,  58 => 15,  56 => 13,  49 => 9,  45 => 8,  39 => 5,  33 => 1,);
+        return array (  237 => 76,  232 => 73,  223 => 72,  213 => 67,  204 => 66,  194 => 14,  185 => 13,  167 => 5,  155 => 82,  153 => 72,  147 => 68,  145 => 66,  132 => 55,  126 => 52,  122 => 51,  116 => 47,  109 => 43,  106 => 42,  101 => 40,  96 => 39,  94 => 38,  86 => 35,  83 => 34,  81 => 33,  71 => 26,  58 => 15,  56 => 13,  49 => 9,  45 => 8,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -290,19 +303,21 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
                            {{ app.user.nom }} {{ app.user.prenom }}
                         </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        {% if app.user.email != \"admin@admin.fr\" %}
                         <a class=\"dropdown-item\" href=\"{{ path('condidat', {'id' : app.user.id }) }}\">Mon CV</a>
                         <a class=\"dropdown-item\" href=\"{{ path('profile')}}\">Profile</a>
+                        {% endif %}
                         <div class=\"dropdown-divider\"></div>
                         <a class=\"dropdown-item\" href=\"{{ path('security_logout') }}\">logout</a>
 
                     </div>
                     {% else %}
                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                            Dropdown
+                            Connexion
                         </a>
                     <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                        <a class=\"dropdown-item\" href=\"#\">Connexion</a>
-                        <a class=\"dropdown-item\" href=\"#\">Inscription</a>
+                        <a class=\"dropdown-item\" href=\"{{ path('security_login')}}\">Connexion</a>
+                        <a class=\"dropdown-item\" href=\"{{ path('security_registration')}}\">Inscription</a>
                     </div>
                     {% endif %}
             </ul>
@@ -330,6 +345,7 @@ class __TwigTemplate_295e440349952fe148c35fffa57140bad91e0f0a1b9944bff936a182934
 
             <script src=\"http://code.jquery.com/jquery-1.7.2.min.js\"></script>
             <script src=\"https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js\"></script>
+
         {% endblock %}
     </body>
 </html>
